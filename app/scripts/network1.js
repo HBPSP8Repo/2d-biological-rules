@@ -56,50 +56,62 @@ handleSelectNode = function( obj ) {
 	
 	$("#noInfoText").remove();
 	$("#nodeInfoText").empty();
-	$("#nodeInfoText").append("Name: "+label+"<br/>")
 
     var url = undefined;
+    var cat = undefined;
+
     if(color == 'rgb(255,255,128)')
     {
     	// Genetic
+    	cat = "Genetic"
         url = 'http://www.genecards.org/cgi-bin/carddisp.pl?gene=' + encodeURIComponent(label.match("\\[(.*)\\]")[1]);
     }
     else if (color == 'rgb(128,255,128)')
     {
     	// Brain Anatomy
+    	cat = "Brain Anatomy"
         url = 'http://google.com/search?q=' + encodeURIComponent(label);
     }
     else if (color == 'rgb(255,153,0)')
     {
     	// Brain Metabolism
+    	cat = "Brain Metabolism"
         url = 'http://google.com/search?q=' + encodeURIComponent(label);
     }
     else if (color == 'rgb(255,128,128)')
     {
     	// AD
+    	cat = "AD"
         url = 'http://google.com/search?q=' + encodeURIComponent(label);
     }
     else if (color == 'rgb(0,102,255)')
     {
     	// Control
+    	cat = "Control"
         url = 'http://google.com/search?q=' + encodeURIComponent(label);
     }
     else if (color == 'rgb(0,204,204)')
     {
     	// CSF Protein
+    	cat = "CSF Protein"
         url = 'http://google.com/search?q=' + encodeURIComponent(label);
     }
     else if (color == 'rgb(204,0,255)')
     {
     	// Blood Protein
+    	cat = "Blood Protein"
         url = 'http://google.com/search?q=' + encodeURIComponent(label);
     }
     else
     {
     	// Unknown
+    	cat = "Unknown"
         url = 'http://google.com/search?q=' + encodeURIComponent(label);   
     }
-    $("#nodeInfoText").append("<a target=\"_blank\" href=\""+url+"\">More...<a/>")
+
+    $("#nodeInfoText").append("Name: "+label+"<br/>")
+    .append("Category: "+cat+"<br/>")
+    .append("<a target=\"_blank\" href=\""+url+"\">More...<a/>");
 }
 
 getNode = function( nodeId ) {
