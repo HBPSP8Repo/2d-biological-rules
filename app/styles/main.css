@@ -16,5 +16,5 @@ h1, h2, h3, h4, h5, h6 {
 	width: 80%;
 	height: 800px;
 	border: 1px solid lightgray;
-	background: grey;
+	background: rgba(64,64,64,0.8);
 }

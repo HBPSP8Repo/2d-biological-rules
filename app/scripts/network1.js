@@ -12,7 +12,7 @@ $.getJSON("data/rules.json", function( gephiJSON ) {
 
 	var data = {
 	  nodes: parsed.nodes,
-	  edged: parsed.edges
+	  edges: parsed.edges
 	};
 	var options = {};
 
