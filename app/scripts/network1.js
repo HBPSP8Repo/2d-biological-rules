@@ -20,7 +20,12 @@ $.getJSON("data/rules.json", function( gephiJSON ) {
 	  },
 	  "interaction": {
             "hover": true
-        }
+      },
+	"physics": {
+		"stabilization": {
+	      "enabled": false
+	    }
+	  }
 	}
 
 	var container = document.getElementById('network1');
