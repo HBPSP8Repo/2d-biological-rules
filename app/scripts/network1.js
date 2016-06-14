@@ -17,6 +17,15 @@ $.getJSON("data/rules.json", function( gephiJSON ) {
 	var options = {
 	  "nodes": {
 	    "shape": "box",
+	    "font": {
+	    	"color": "black"
+	    }
+	  },
+	  "edges": {
+	  	"font": {
+	  		"color": "white",
+	  		"strokeWidth": 0
+	  	}
 	  },
 	  "interaction": {
             "hover": true
