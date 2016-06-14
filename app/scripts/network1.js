@@ -16,8 +16,11 @@ $.getJSON("data/rules.json", function( gephiJSON ) {
 	};
 	var options = {
 	  "nodes": {
-	    "shape": "box"
-	  }
+	    "shape": "box",
+	  },
+	  "interaction": {
+            "hover": true
+        }
 	}
 
 	var container = document.getElementById('network1');
