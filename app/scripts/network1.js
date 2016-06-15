@@ -1,3 +1,16 @@
+// CONSTANTS
+
+GENETIC_COLOR = "rgb(255,255,128)";  // #FFFF80
+BRAIN_ANATOMY_COLOR = "rgb(128,255,128)";  // #80FF80
+BRAIN_METABOLISM_COLOR = "rgb(255,153,0)";  // #809900
+AD_COLOR = "rgb(255,128,128)";  // #FF8080
+CONTROL_COLOR = "rgb(0,102,255)";  // #0066FF
+CSF_PROTEIN_COLOR = "rgb(0,204,204)";  // #00CCCC
+BLOOD_PROTEIN_COLOR = "rgb(204,0,255)";  // #CC00FF
+
+
+// MAIN PROCESS
+
 var container = document.getElementById('network1');
 
 var data = null;
@@ -48,6 +61,9 @@ $.getJSON("data/rules.json", function( gephiJSON ) {
 	network.on("selectNode", handleSelectNode);
 });
 
+
+// FUNCTIONS
+
 handleSelectNode = function( obj ) {
 	nodeId = obj.nodes[0];
 	node = getNode(nodeId);
@@ -60,51 +76,43 @@ handleSelectNode = function( obj ) {
     var url = undefined;
     var cat = undefined;
 
-    if(color == 'rgb(255,255,128)')
+    if(color == GENETIC_COLOR)
     {
-    	// Genetic
     	cat = "Genetic"
         url = 'http://www.genecards.org/cgi-bin/carddisp.pl?gene=' + encodeURIComponent(label.match("\\[(.*)\\]")[1]);
     }
-    else if (color == 'rgb(128,255,128)')
+    else if (color == BRAIN_ANATOMY_COLOR)
     {
-    	// Brain Anatomy
     	cat = "Brain Anatomy"
         url = 'http://google.com/search?q=' + encodeURIComponent(label);
     }
-    else if (color == 'rgb(255,153,0)')
+    else if (color == BRAIN_METABOLISM_COLOR)
     {
-    	// Brain Metabolism
     	cat = "Brain Metabolism"
         url = 'http://google.com/search?q=' + encodeURIComponent(label);
     }
-    else if (color == 'rgb(255,128,128)')
+    else if (color == AD_COLOR)
     {
-    	// AD
     	cat = "AD"
         url = 'http://google.com/search?q=' + encodeURIComponent(label);
     }
-    else if (color == 'rgb(0,102,255)')
+    else if (color == CONTROL_COLOR)
     {
-    	// Control
     	cat = "Control"
         url = 'http://google.com/search?q=' + encodeURIComponent(label);
     }
-    else if (color == 'rgb(0,204,204)')
+    else if (color == CSF_PROTEIN_COLOR)
     {
-    	// CSF Protein
     	cat = "CSF Protein"
         url = 'http://google.com/search?q=' + encodeURIComponent(label);
     }
-    else if (color == 'rgb(204,0,255)')
+    else if (color == BLOOD_PROTEIN_COLOR)
     {
-    	// Blood Protein
     	cat = "Blood Protein"
         url = 'http://google.com/search?q=' + encodeURIComponent(label);
     }
     else
     {
-    	// Unknown
     	cat = "Unknown"
         url = 'http://google.com/search?q=' + encodeURIComponent(label);   
     }
