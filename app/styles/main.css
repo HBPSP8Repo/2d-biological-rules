@@ -29,6 +29,7 @@ h1, h2, h3, h4, h5, h6 {
 	height: 548px;
 	border: 1px solid lightgray;
 	background: rgba(200,200,200,0.5);
+	min-width: 260px;
 }
 
 .legend {
@@ -39,6 +40,7 @@ h1, h2, h3, h4, h5, h6 {
 	height: 240px;
 	border: 1px solid lightgray;
 	background: rgba(200,200,200,0.5);
+	min-width: 260px;
 }
 
 .legend .legend-scale ul li {
