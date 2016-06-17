@@ -11,7 +11,7 @@ BLOOD_PROTEIN_COLOR = "rgb(204,0,255)";  // #CC00FF
 
 // MAIN PROCESS
 
-var container = document.getElementById('network1');
+var container = document.getElementById('network');
 
 var data = null;
 
@@ -70,8 +70,8 @@ handleSelectNode = function( obj ) {
 	label = node.label;
 	color = node.color.background;
 	
-	$("#noInfoText").remove();
-	$("#nodeInfoText").empty();
+	$("#node-info-init").remove();
+	$("#node-info-content").empty();
 
     var url = undefined;
     var cat = undefined;
@@ -117,7 +117,7 @@ handleSelectNode = function( obj ) {
         url = 'http://google.com/search?q=' + encodeURIComponent(label);   
     }
 
-    $("#nodeInfoText").append("Name: "+label+"<br/>")
+    $("#node-info-content").append("Name: "+label+"<br/>")
     .append("Category: "+cat+"<br/>")
     .append("<a target=\"_blank\" href=\""+url+"\">More...<a/>");
 }
